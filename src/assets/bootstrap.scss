@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,600&family=Roboto+Slab&family=Titillium+Web:wght@900&display=swap');
+
+$primary: #d41f3d;
+$secondary: #8d99ae;
+$light: #edf2f4;
+$dark: #2b2d42;
+
+$link-color: $light;
+
+$focus-ring-opacity: 0.25 !default;
+$focus-ring-color: rgba($secondary, $focus-ring-opacity);
+$input-focus-border-color: rgba($secondary, 0.7);
+
+$font-family-sans-serif:
+    'Roboto Slab',
+    serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    'Noto Sans',
+    'Liberation Sans',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+$headings-font-family: 'Libre Franklin', sans-serif;
+$display-font-family: 'Titillium Web', sans-serif;
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
