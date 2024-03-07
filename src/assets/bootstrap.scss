@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,600&family=Roboto+Slab&family=Titillium+Web:wght@900&display=swap');
 
+$enable-caret: false;
+
 $primary: #d41f3d;
 $secondary: #8d99ae;
 $light: #edf2f4;
 $dark: #2b2d42;
 
-$link-color: $light;
-
-$focus-ring-opacity: 0.25 !default;
-$focus-ring-color: rgba($secondary, $focus-ring-opacity);
-$input-focus-border-color: rgba($secondary, 0.7);
+$link-color:                              $secondary;
+$link-hover-color:                        $dark;
+$link-color-dark:                         $secondary;
+$link-hover-color-dark:                   $light;
+$link-decoration:                         none;
 
 $font-family-sans-serif:
     'Roboto Slab',
