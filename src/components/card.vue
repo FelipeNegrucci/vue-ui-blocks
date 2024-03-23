@@ -1,15 +1,13 @@
-<!-- eslint-disable vue/require-valid-default-prop -->
 <script setup>
-    // <div class="container-fluid px-1 px-sm-2 px-md-3 px-lg-3 px-xl-4 px-xxl-0">
-    //     <div class="container-xxl">
-    //         <div class="row gx-0 gap-3">
 const props = defineProps({
     data:{
-        default:[
-            'titulo',
-            302,
-            23
-        ],
+        default(){
+            return [
+                'Card Title',
+                '000',
+                '00'
+            ]
+        },
         type: Array,
     }
 })
@@ -17,17 +15,17 @@ const props = defineProps({
 
 <template>
 <div class="col">
-    <div class="card-bg row justify-content-between rounded-1 p-3 shadow-sm mx-0 border">
+    <div class="card-color row justify-content-between rounded-1 p-3 shadow-sm mx-0 border">
         <div class="col-auto vstack gap-2 px-0">
             <div class="card-title text-capitalize">{{ props.data[0] }}</div>
-            <div class="card-data fs-5">{{ props.data[1] }}</div>
-            <div class="card-text">
-                <span class="card-text-registry fw-bold me-1">{{ props.data[2] }} novos</span>
+            <div class="card-value fs-5">{{ props.data[1] }}</div>
+            <div>
+                <span class="card-new fw-bold me-1">{{ props.data[2] }} novos</span>
                 <span>registros (mes)</span>
             </div>
         </div>
         <div class="col-auto px-0">
-            <div class="card-icon-bg-0 rounded-2 d-flex">
+            <div class="card-icon rounded-2 d-flex">
                 <slot></slot>
             </div>
         </div>
@@ -37,24 +35,55 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .card{
-    &-bg{
+    &-color{
         min-width: 270px;
-        scale: 1;
+        scale: 1; 
+        transition: scale .2s ease-in-out;
         &:hover{
             scale: 0.95;
         }
-        transition: scale .2s ease-in-out,
-                    background-color .2s ease-in-out;
     }
-    &-icon-bg{
+    &-icon{
         width: 42px;
         height: 42px;
     }
 }
 [data-bs-theme="light"]{
-
+    .card{
+        &-color{
+            background-color: var(--bs-gray-100);
+            &:hover{
+                background-color: rgba(var(--bs-dark-rgb), .025);
+            }
+        }
+        &-value{
+            color: var(--bs-light-text-emphasis);
+        }
+        &-new{
+            color: var(--bs-success);
+        }
+        &-icon{
+            background-color: rgba(var(--bs-primary-rgb), .15);
+        }    
+    }
 }
 [data-bs-theme="dark"]{
-
+    .card{
+        &-color{
+            background-color: var(--bs-gray-800);
+            &:hover{
+                background-color: rgba(var(--bs-light-rgb), 0.08);
+            }
+        }
+        &-value{
+            color: var(--bs-light-text-emphasis);
+        }
+        &-new{
+            color: var(--bs-success);
+        }
+        &-icon{
+            background-color: rgba(var(--bs-primary-rgb), .2);
+        }    
+    }
 }
 </style>

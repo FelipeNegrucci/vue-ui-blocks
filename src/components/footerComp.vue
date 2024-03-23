@@ -18,7 +18,7 @@ import iconFolder from './icons/iconFolder.vue';
                         </div>
                     </div>
                     <div class="footer-text text-center px-0">© 2024-2025 Felipe Negrucci. Todos os direitos reservados.</div>
-                    <div class="social px-0 mx-auto hstack gap-3">
+                    <div class="px-0 mx-auto hstack gap-3">
                         <iconChart class="social-icon"/>
                         <iconUser class="social-icon"/>
                         <iconFolder class="social-icon"/>
@@ -42,6 +42,22 @@ import iconFolder from './icons/iconFolder.vue';
     }
 }
 [data-bs-theme="light"], [data-bs-theme="dark"]{
-
+    .container-fluid{
+        background-color: var(--bs-dark);
+        .brand{
+            &-logo{
+                fill: var(--bs-light);
+            }
+            &-name{
+                color: var(--bs-light);
+            }
+        }
+        .footer-text{
+            color: var(--bs-light);
+        }
+        .social-icon{
+            fill: var(--bs-light);
+        }
+    }
 }
 </style>

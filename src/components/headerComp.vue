@@ -70,8 +70,8 @@ function toggleColorMode(){
                         <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn d-flex p-0 rounded-3 border-0 dropdown-toggle">
                             <iconSettings class="btn-icon m-auto"/>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end py-0 rounded-1 shadow-sm text-capitalize">
-                            <div class="dropdown-title rounded-top-1 text-center h6 mb-0 p-2">painel</div>
+                        <ul class="dropdown-menu dropdown-menu-end py-0 rounded-2 shadow-sm text-capitalize mt-2">
+                            <div class="dropdown-title rounded-top-1 text-center h6 mb-0 py-2">painel</div>
                             <div class="p-2">
                                 <li>
                                     <a class="dropdown-item rounded rounded-1 px-3 py-2" href="#">
@@ -129,9 +129,6 @@ header{
         }
     }
     .dropdown{
-        &-menu{
-            transition: background-color .2s ease-in-out;
-        }
         &-item{
             transition: color .2s ease-in-out, background-color .2s ease-in-out;
         }
@@ -143,12 +140,85 @@ header{
     }
 }
 [data-bs-theme="light"], [data-bs-theme="dark"]{
-
+    header{
+        background-color: var(--bs-dark);
+        .brand{
+            &-logo{
+                fill: var(--bs-light);
+            }
+            &-name{
+                color: var(--bs-light);
+            }
+        }
+        .nav{
+            &-link{
+                color: var(--bs-light);
+                &:hover{
+                    .nav-icon{
+                        fill: var(--bs-light);
+                    }
+                }
+            }
+            &-icon{
+                fill: rgba(var(--bs-light-rgb), 0.65);
+            }
+        }
+        .btn-icon{
+            fill: var(--bs-light);
+        }
+        .vr{
+            background-color: var(--bs-gray-400);
+        }
+        button:hover{
+            background-color: rgba(var(--bs-light-rgb),.15)
+        }
+    }
 }
 [data-bs-theme="light"]{
-
+    .dropdown{
+        &-title{
+            background-color: var(--bs-gray-500);
+        }
+        &-menu{
+            background-color: var(--bs-gray-200);
+        }
+        &-item{
+            color: var(--bs-gray-700);
+            &:hover{
+                color: var(--bs-dark);
+                background-color: var(--bs-gray-100);
+                .dropdown-icon{
+                    fill: var(--bs-dark);
+                }
+            }
+        }
+        &-icon{
+            fill: var(--bs-gray-700);
+        }
+    }
 }
 [data-bs-theme="dark"]{
-
+    .dropdown{
+        &-title{
+            color: var(--bs-gray-300);
+            background-color: var(--bs-gray-600);
+        }
+        &-menu{
+            background-color: var(--bs-gray-700);
+        }
+        &-item{
+            color: var(--bs-gray-400);
+            &:hover{
+                color: var(--bs-light);
+                background-color: var(--bs-gray-800);
+                .dropdown-icon{
+                    fill: var(--bs-light);
+                }
+            }
+        }
+        &-icon{
+            fill: var(--bs-gray-400);
+        }
+    }
 }
 </style>
