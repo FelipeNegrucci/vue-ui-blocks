@@ -143,95 +143,12 @@ header{
     }
 }
 [data-bs-theme="light"], [data-bs-theme="dark"]{
-    header{
-        background-color: var(--bs-dark);
-        .brand{
-            &-name{
-                color: var(--bs-light);
-            }
-        }
-        .nav-link{
-            .nav-icon{
-                fill: rgba(var(--bs-primary-rgb), .6);
-            }
-            span{
-                color: var(--bs-gray-500);
-            }
-            &:hover{
-                .nav-icon{
-                    fill: rgba(var(--bs-primary-rgb), 1);
-                }
-                span{
-                    color: var(--bs-light);
-                }
-            }
-        }
-        .btn{
-            .btn-icon{
-                fill: var(--bs-gray-500);
-            }
-            &:hover{
-                background-color: rgba(var(--bs-secondary-rgb), .3);
-                .btn-icon{
-                    fill: var(--bs-light);
-                }
-            }
-        }
-        .vr{
-            background-color: var(--bs-gray-400);
-        }
-    }
+
 }
 [data-bs-theme="light"]{
-    header{
-        .dropdown{
-            &-menu{
-                background-color: var(--bs-secondary-bg);
-            }
-            &-title{
-                color: var(--bs-gray-700);
-                background-color: var(--bs-gray-500);
-            }
-            &-item{
-                color: var(--bs-secondary-color);
-                &:hover{
-                    color: var(--bs-dark);
-                    background-color: var(--bs-tertiary-bg);
-                    .dropdown-icon{
-                        fill: var(--bs-dark);
-                    }
-                }
-            }
-            &-icon{
-                fill: var(--bs-secondary-color);
-            }
-        }
-    }
+
 }
 [data-bs-theme="dark"]{
-    header{
-        .dropdown{
-            &-menu{
-                background-color: var(--bs-secondary-bg);
-            }
-            &-title{
-                color: var(--bs-gray-500);
-                background-color: var(--bs-gray-700);
-            }
-            &-item{
-                color: var(--bs-secondary-color);
-                &:hover{
-                    color: var(--bs-light);
-                    background-color: var(--bs-gray-700);
-                    .dropdown-icon{
-                        fill: var(--bs-light);
-                    }
-                }
-            }
-            &-icon{
-                fill: var(--bs-secondary-color);
-            }
-        }
-    }
+
 }
 </style>

@@ -42,23 +42,6 @@ import iconFolder from './icons/iconFolder.vue';
     }
 }
 [data-bs-theme="light"], [data-bs-theme="dark"]{
-    .container-fluid{
-        color: var(--bs-light);
-        background-color: var(--bs-dark);
-        .brand-name{
-            color: var(--bs-light);
-        }
-        .footer-text{
-            color: var(--bs-gray-500);
-        }
-        .social{
-            &-icon{
-                fill: var(--bs-gray-500);
-                &:hover{
-                    fill: var(--bs-light);
-                }
-            }
-        }
-    }
+
 }
 </style>
