@@ -9,16 +9,24 @@ import iconFolder from './icons/iconFolder.vue';
         <div class="container-xxl">
             <div class="row gx-0 gap-3">
                 <card :data="['Alunos (Total)', 212, 3]">
-                    <iconUser fill="var(--bs-primary)" class="icon-size m-auto"/>
+                    <div class="card-icon-1 rounded-2 d-flex">
+                        <iconUser class="icon-size m-auto"/>
+                    </div>
                 </card>
                 <card :data="['Alunos (Semana)', 87, 2]">
-                    <iconUser fill="var(--bs-primary)" class="icon-size m-auto"/>
+                    <div class="card-icon-2 rounded-2 d-flex">
+                        <iconUser class="icon-size m-auto"/>
+                    </div>
                 </card>
                 <card :data="['Fichas (Total)', 333, 25]">
-                    <iconFolder fill="var(--bs-primary)" class="icon-size m-auto"/>
+                    <div class="card-icon-3 rounded-2 d-flex">
+                        <iconUser class="icon-size m-auto"/>
+                    </div>
                 </card>
                 <card :data="['Fichas (Semana)', 765, 35]">
-                    <iconFolder fill="var(--bs-primary)" class="icon-size m-auto"/>
+                    <div class="card-icon-4 rounded-2 d-flex">
+                        <iconUser class="icon-size m-auto"/>
+                    </div>
                 </card>
             </div>
         </div>
@@ -26,12 +34,43 @@ import iconFolder from './icons/iconFolder.vue';
 </template>
 
 <style scoped lang="scss">
+.card-icon{
+    &-1, &-2, &-3, &-4{
+        width: 42px;
+        height: 42px;
+    }
+}
 .icon-size{
     width: 24px;
     height: 24px;
 }
 [data-bs-theme="light"]{
-
+    .card-icon{
+        &-1{
+            background-color: rgba(var(--bs-info-rgb), 0.2);
+            .icon-size{
+                fill: rgb(var(--bs-info-rgb));;
+            }
+        }
+        &-2{
+            background-color: rgba(var(--bs-secondary-rgb), 0.2);
+            .icon-size{
+                fill: rgb(var(--bs-secondary-rgb));;
+            }
+        }
+        &-3{
+            background-color: rgba(var(--bs-success-rgb), 0.2);
+            .icon-size{
+                fill: rgb(var(--bs-success-rgb));;
+            }
+        }
+        &-4{
+            background-color: rgba(var(--bs-primary-rgb), 0.2);
+            .icon-size{
+                fill: rgb(var(--bs-primary-rgb));;
+            }
+        }
+    }
 }
 [data-bs-theme="dark"]{
 

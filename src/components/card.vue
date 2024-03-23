@@ -25,9 +25,7 @@ const props = defineProps({
             </div>
         </div>
         <div class="col-auto px-0">
-            <div class="card-icon rounded-2 d-flex">
-                <slot></slot>
-            </div>
+            <slot></slot>
         </div>
     </div>
 </div>

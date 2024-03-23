@@ -144,7 +144,7 @@ header{
         background-color: var(--bs-dark);
         .brand{
             &-logo{
-                fill: var(--bs-light);
+                fill: var(--bs-primary);
             }
             &-name{
                 color: var(--bs-light);
@@ -155,12 +155,12 @@ header{
                 color: var(--bs-light);
                 &:hover{
                     .nav-icon{
-                        fill: var(--bs-light);
+                        fill: var(--bs-primary);
                     }
                 }
             }
             &-icon{
-                fill: rgba(var(--bs-light-rgb), 0.65);
+                fill: rgba(var(--bs-primary-rgb), 0.65);
             }
         }
         .btn-icon{
