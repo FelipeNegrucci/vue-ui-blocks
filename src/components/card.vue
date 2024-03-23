@@ -51,7 +51,7 @@ const props = defineProps({
         &-color{
             background-color: var(--bs-gray-100);
             &:hover{
-                background-color: rgba(var(--bs-dark-rgb), .025);
+                background-color: rgba(255, 255, 255, 0.5);
             }
         }
         &-value{

@@ -14,7 +14,7 @@ import dataActivity from '@/components/dataActivity.vue';
 <style scoped lang="scss">
 [data-bs-theme="light"]{
     .container-fluid{
-        background-color: var(--bs-gray-100);
+        background-color: var(--bs-gray-300);
     }
 }
 [data-bs-theme="dark"]{

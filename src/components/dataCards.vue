@@ -20,12 +20,12 @@ import iconFolder from './icons/iconFolder.vue';
                 </card>
                 <card :data="['Fichas (Total)', 333, 25]">
                     <div class="card-icon-3 rounded-2 d-flex">
-                        <iconUser class="icon-size m-auto"/>
+                        <iconFolder class="icon-size m-auto"/>
                     </div>
                 </card>
                 <card :data="['Fichas (Semana)', 765, 35]">
                     <div class="card-icon-4 rounded-2 d-flex">
-                        <iconUser class="icon-size m-auto"/>
+                        <iconFolder class="icon-size m-auto"/>
                     </div>
                 </card>
             </div>
