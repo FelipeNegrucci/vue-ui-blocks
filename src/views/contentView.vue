@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    notfound
+    content
 </template>
 
 <style></style>

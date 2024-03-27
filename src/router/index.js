@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import mainView from '@/views/mainView.vue'
-import dataView from '@/views/dataView.vue'
+import contentView from '@/views/contentView.vue'
 import notFoundViewer from '@/views/notFoundViewer.vue'
 
 const router = createRouter({
@@ -15,7 +15,7 @@ const router = createRouter({
                 {
                     path: '/',
                     name: 'data',
-                    component: dataView,
+                    component: contentView,
                 }
             ]
         },
