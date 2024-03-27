@@ -38,8 +38,8 @@ function toggleColorMode(){
 </script>
 
 <template>
-    <header class="container-fluid">
-        <div class="container-xxl h-100">
+    <header class="container-fluid px-4 user-select-none">
+        <div class="container-xxl h-100 px-xxl-4">
             <div class="row h-100 align-content-center justify-content-between">
                 <div class="col-auto px-0 d-flex gap-4">
                     <div class="d-flex">

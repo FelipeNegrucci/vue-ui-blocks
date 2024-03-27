@@ -20,8 +20,8 @@ const props = defineProps({
 </script>
 
 <template>
-    <footer class="container-fluid py-4">
-        <div class="container-xxl">
+    <footer class="container-fluid py-4 px-4 user-select-none">
+        <div class="container-xxl px-xxl-4">
             <div class="row" :class="props.display.width < 625 ? 'justify-content-center' : 'justify-content-between'">
                 <div class="col-auto text-color px-0 text-center" :class="props.display.width < 625 ? 'mb-2' : 'my-auto'">© 2024-2025 Felipe Negrucci. Todos os direitos reservados.</div>
                 <div class="col-auto px-0 hstack gap-1 my-auto">
