@@ -35,7 +35,7 @@ onMounted(()=>{
 </script>
 
 <template>
-    <headerComp/>
+    <headerComp :display="display"/>
     <router-view></router-view>
     <footerComp/>
 </template>
