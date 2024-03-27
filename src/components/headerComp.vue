@@ -26,7 +26,8 @@ const props = defineProps({
 var colorMode = inject('colorMode')
 const breakPoints = {
     brandName: 370,
-    navigation: 730
+    navigation: 730,
+    offcanvasWidth: 340
 }
 
 function toggleColorMode(){
@@ -46,7 +47,7 @@ function toggleColorMode(){
                         <div v-if="props.display.width >= breakPoints.brandName" class="my-auto ms-2 h5">brand-name</div>
                     </div>
                     <div class="my-auto">
-                        <navigationComp v-if="props.display.width >= breakPoints.navigation"/>
+                        <navigationComp :vertical="false" v-if="props.display.width >= breakPoints.navigation"/>
                     </div>
                 </div>
                 <div class="col-auto px-0 my-auto d-flex gap-2">
@@ -63,18 +64,18 @@ function toggleColorMode(){
         </div>
     </header>
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
+    <div class="offcanvas offcanvas-start" :style="{ width: breakPoints.offcanvasWidth + 'px' }" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header px-4 mb-2">
             <div class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
                 <div class="d-flex">
                     <iconEye class="icon-color my-auto" width="36" height="36"/>
                     <div class="my-auto ms-2 h5">brand-name</div>
                 </div>
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button v-if="props.display.width <= breakPoints.offcanvasWidth" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <navigationComp class="flex-column"/>
+            <navigationComp :vertical="true"/>
         </div>
     </div>
 

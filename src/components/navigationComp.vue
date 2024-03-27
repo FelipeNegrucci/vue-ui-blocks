@@ -1,18 +1,24 @@
 <script setup>
 import iconChart from './icons/iconChart.vue';
+const props = defineProps({
+    vertical:{
+        required: true,
+        type: Boolean
+    }
+})
 </script>
 
 <template>
-    <nav class="nav gap-2">
-        <RouterLink to="/" class="nav-link d-flex px-2 py-1">
+    <nav class="nav gap-2" :class="props.vertical ? 'flex-column' : ''">
+        <RouterLink to="/" class="nav-link d-flex rounded-2" :class="props.vertical ? 'link-color px-3 py-2' : 'px-2 py-1'">
             <iconChart class="icon-color my-auto" fill="var(--bs-light)" width="20" height="20"/>
             <span class="my-auto ms-1">RouterLink</span>
         </RouterLink>
-        <RouterLink to="/" class="nav-link d-flex px-2 py-1">
+        <RouterLink to="/" class="nav-link d-flex rounded-2" :class="props.vertical ? 'link-color px-3 py-2' : 'px-2 py-1'">
             <iconChart class="icon-color my-auto" fill="var(--bs-light)" width="20" height="20"/>
             <span class="my-auto ms-1">RouterLink</span>
         </RouterLink>
-        <RouterLink to="/" class="nav-link d-flex px-2 py-1">
+        <RouterLink to="/" class="nav-link d-flex rounded-2" :class="props.vertical ? 'link-color px-3 py-2' : 'px-2 py-1'">
             <iconChart class="icon-color my-auto" fill="var(--bs-light)" width="20" height="20"/>
             <span class="my-auto ms-1">RouterLink</span>
         </RouterLink>
@@ -37,6 +43,9 @@ import iconChart from './icons/iconChart.vue';
             }
         }
     }
+    .link-color:hover{
+        background-color: rgba(var(--bs-dark-rgb), 0.07);
+    }
 }
 [data-bs-theme='dark']{
     .nav-link{
@@ -54,6 +63,9 @@ import iconChart from './icons/iconChart.vue';
                 color: var(--bs-light);
             }
         }
+    }
+    .link-color:hover{
+        background-color: rgba(var(--bs-light-rgb), 0.07);
     }
 }
 </style>
