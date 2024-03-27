@@ -7,24 +7,26 @@ import iconSun from './icons/iconSun.vue';
 import iconMenu from './icons/iconMenu.vue';
 
 const props = defineProps({
-    width:{
-        type: Number,
-        required: true
-    },
-    isLandscapeOrientation:{
-        type:Boolean,
-        required: true
-    },
-    isMobileDevice:{
-        type: Boolean,
-        required: true
+    display:{
+        width:{
+            required: true,
+            type: Object
+        },
+        isLandscapeOrientation:{
+            required: true,
+            type: Boolean
+        },
+        isMobileDevice:{
+            required:true,
+            type: Boolean
+        }
     }
 })
 
 var colorMode = inject('colorMode')
 const breakPoints = {
-    brandName: 480,
-    navigation: 1035
+    brandName: 370,
+    navigation: 730
 }
 
 function toggleColorMode(){
@@ -41,10 +43,10 @@ function toggleColorMode(){
                 <div class="col-auto px-0 d-flex gap-4">
                     <div class="d-flex">
                         <iconEye class="icon-color my-auto" width="36" height="36"/>
-                        <div class="my-auto ms-2 h5">brand-name</div>
+                        <div v-if="props.display.width >= breakPoints.brandName" class="my-auto ms-2 h5">brand-name</div>
                     </div>
                     <div class="my-auto">
-                        <navigationComp/>
+                        <navigationComp v-if="props.display.width >= breakPoints.navigation"/>
                     </div>
                 </div>
                 <div class="col-auto px-0 my-auto d-flex gap-2">
@@ -52,14 +54,30 @@ function toggleColorMode(){
                         <iconMoon v-if="colorMode == 'light'" class="icon-color" width="24" height="24"/>
                         <iconSun v-if="colorMode == 'dark'" class="icon-color" width="24" height="24"/>
                     </button>
-                    <div class="vr"></div>
-                    <button v-if="props.width > 800" type="button" class="btn p-0 border-0">
+                    <div v-if="props.display.width < breakPoints.navigation" class="vr"></div>
+                    <button v-if="props.display.width < breakPoints.navigation" class="btn p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                         <iconMenu class="icon-color" width="24" height="24"/>
                     </button>
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <div class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                <div class="d-flex">
+                    <iconEye class="icon-color my-auto" width="36" height="36"/>
+                    <div class="my-auto ms-2 h5">brand-name</div>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <navigationComp class="flex-column"/>
+        </div>
+    </div>
+
 </template>
 
 <style scoped lang="scss">
@@ -77,9 +95,9 @@ header{
         button:hover{
             background-color: rgba(var(--bs-dark-rgb), 0.12);
         }
-        .icon-color{
-            fill: var(--bs-dark);
-        }
+    }
+    .icon-color{
+        fill: var(--bs-dark);
     }
 }
 [data-bs-theme='dark']{
@@ -89,9 +107,9 @@ header{
         button:hover{
             background-color: rgba(var(--bs-light-rgb), 0.12);
         }
-        .icon-color{
-            fill: var(--bs-light);
-        }
+    }
+    .icon-color{
+        fill: var(--bs-light);
     }
 }
 </style>
