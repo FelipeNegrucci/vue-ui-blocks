@@ -1,5 +1,7 @@
 <script setup>
 import iconChart from './icons/iconChart.vue';
+import iconPrinter from './icons/iconPrinter.vue';
+import iconSettings from './icons/iconSettings.vue';
 
 const props = defineProps({
     display:{
@@ -29,13 +31,10 @@ const props = defineProps({
                         <iconChart class="icon-color m-auto"/>
                     </RouterLink>
                     <RouterLink to="/" class="icon-area rounded-2 d-flex">
-                        <iconChart class="icon-color m-auto"/>
+                        <iconPrinter class="icon-color m-auto"/>
                     </RouterLink>
                     <RouterLink to="/" class="icon-area rounded-2 d-flex">
-                        <iconChart class="icon-color m-auto"/>
-                    </RouterLink>
-                    <RouterLink to="/" class="icon-area rounded-2 d-flex">
-                        <iconChart class="icon-color m-auto"/>
+                        <iconSettings class="icon-color m-auto"/>
                     </RouterLink>
                 </div>
             </div>
@@ -52,39 +51,19 @@ const props = defineProps({
     width: 20px;
     height: 20px;
 }
-[data-bs-theme='light']{
+[data-bs-theme='light'], [data-bs-theme='dark']{
     footer{
-        .text-color{
-            color: rgba(var(--bs-dark-rgb), 0.7);
-        }
-        color: var(--bs-dark);
-        background-color: var(--bs-light);
-        .icon-area{
-            .icon-color{
-                fill: rgba(var(--bs-dark-rgb), 0.7);
-            }
-            &:hover{
-                background-color: rgba(var(--bs-dark-rgb), 0.07);
-                .icon-color{
-                    fill: var(--bs-dark);
-                }
-            }
-        }
-    }
-}
-[data-bs-theme='dark']{
-    footer{
+        color: var(--bs-light);
+        background-color: var(--bs-primary);
         .text-color{
             color: rgba(var(--bs-light-rgb), 0.7);
         }
-        color: var(--bs-light);
-        background-color: var(--bs-dark);
         .icon-area{
             .icon-color{
                 fill: rgba(var(--bs-light-rgb), 0.7);
             }
             &:hover{
-                background-color: rgba(var(--bs-light-rgb), 0.07);
+                background-color: rgba(var(--bs-light-rgb), 0.17);
                 .icon-color{
                     fill: var(--bs-light);
                 }

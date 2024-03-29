@@ -1,7 +1,7 @@
 <script setup>
 import { inject } from 'vue';
 import navigationComp from '@/components/navigationComp.vue';
-import iconEye from './icons/iconEye.vue';
+import iconDumbbell from './icons/iconDumbbell.vue';
 import iconMoon from './icons/iconMoon.vue';
 import iconSun from './icons/iconSun.vue';
 import iconMenu from './icons/iconMenu.vue';
@@ -25,8 +25,8 @@ const props = defineProps({
 
 var colorMode = inject('colorMode')
 const breakPoints = {
-    brandName: 370,
-    navigation: 730,
+    brandName: 485,
+    navigation: 935,
     offcanvasWidth: 340
 }
 
@@ -43,8 +43,8 @@ function toggleColorMode(){
             <div class="row h-100 align-content-center justify-content-between">
                 <div class="col-auto px-0 d-flex gap-4">
                     <div class="d-flex">
-                        <iconEye class="icon-color my-auto" width="36" height="36"/>
-                        <div v-if="props.display.width >= breakPoints.brandName" class="my-auto ms-2 h5">brand-name</div>
+                        <iconDumbbell class="icon-color my-auto" width="36" height="36"/>
+                        <div v-if="props.display.width >= breakPoints.brandName" class="my-auto ms-2 h5 text-capitalize">gerenciador de fichas</div>
                     </div>
                     <div class="my-auto">
                         <navigationComp :vertical="false" v-if="props.display.width >= breakPoints.navigation"/>
@@ -68,8 +68,8 @@ function toggleColorMode(){
         <div class="offcanvas-header px-4 mb-2">
             <div class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
                 <div class="d-flex">
-                    <iconEye class="icon-color my-auto" width="36" height="36"/>
-                    <div class="my-auto ms-2 h5">brand-name</div>
+                    <iconDumbbell class="icon-color my-auto" width="36" height="36"/>
+                    <div class="my-auto ms-2 h5 text-capitalize">gerenciador de fichas</div>
                 </div>
             </div>
             <button v-if="props.display.width <= breakPoints.offcanvasWidth" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -89,28 +89,20 @@ header{
         height: 38px;
     }
 }
-[data-bs-theme='light']{
-    header{
-        color: var(--bs-dark);
-        background-color: var(--bs-light);
-        button:hover{
-            background-color: rgba(var(--bs-dark-rgb), 0.12);
-        }
-    }
-    .icon-color{
-        fill: var(--bs-dark);
-    }
-}
-[data-bs-theme='dark']{
+[data-bs-theme='light'], [data-bs-theme='dark']{
     header{
         color: var(--bs-light);
-        background-color: var(--bs-dark);
+        background-color: var(--bs-primary);
         button:hover{
-            background-color: rgba(var(--bs-light-rgb), 0.12);
+            background-color: rgba(var(--bs-light-rgb), 0.27);
         }
     }
     .icon-color{
         fill: var(--bs-light);
+    }
+    .offcanvas{
+        color: var(--bs-light);
+        background-color: var(--bs-primary);
     }
 }
 </style>

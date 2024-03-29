@@ -1,12 +1,27 @@
 <script setup>
+const props = defineProps({
+    data:{
+        required: true,
+        type: Array,
+        default(){
+            return [
+                'data-title',
+                '0.000',
+                ['000','data-news']
+            ]
+        }
+    }
+})
 </script>
 
+
+
 <template>
-    <div class="stat-card p-3 rounded-2 shadow-sm border d-flex justify-content-between">
+    <div class="stat-card p-3 rounded-2 shadow border d-flex justify-content-between">
         <div class="col-auto vstack gap-2">
-            <div class="text-capitalize">Customers</div>
-            <div class="h5 mb-0">2.000</div>
-            <div class="text-update">520 newly registered</div>
+            <span class="text-title text-capitalize">{{ props.data[0] }}</span>
+            <span class="text-stat fs-5 fw-bold">{{ props.data[1] }}</span>
+            <span class="text-news"><span class="text-success fw-bold">{{ props.data[2][0] }}</span> {{ props.data[2][1] }}</span>
         </div>
         <div class="col-auto">
             <div class="icon-area rounded-2 d-flex align-items-center justify-content-center">
@@ -24,9 +39,6 @@
     width: 38px;
     height: 38px;
 }
-.text-update{
-    color: var(--bs-success);
-}
 [data-bs-theme='light']{
     .stat-card{
         background-color: var(--bs-gray-100);
@@ -34,8 +46,11 @@
     .icon-area{
         background-color: rgba(var(--bs-dark-rgb), .085);
     }
-    .text-capitalize{
+    .text-title, .text-news{
         color: var(--bs-gray-600);
+    }
+    .text-stat{
+        color: var(--bs-gray-700);
     }
 }
 [data-bs-theme='dark']{
@@ -45,8 +60,11 @@
     .icon-area{
         background-color: rgba(var(--bs-light-rgb), .085);
     }
-    .text-capitalize{
+    .text-title, .text-news{
         color: var(--bs-gray-500);
-    } 
+    }
+    .text-stat{
+        color: var(--bs-gray-400);
+    }
 }
 </style>
