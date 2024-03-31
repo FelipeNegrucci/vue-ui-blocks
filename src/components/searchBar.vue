@@ -10,15 +10,12 @@ var isFocused = ref(false)
     <span class="input-group-text border-0 rounded-3">
         <iconSearch class="icon-color" width="18" height="18" stroke="var(--bs-dark)" fill="none"/>
     </span>
-    <input @focusin="isFocused = true" @focusout="isFocused = false" type="text" class="form-control focus-ring border-0 ps-0 me-1" placeholder="Search..." aria-label="SearchBar" aria-describedby="SearchBar">
-    <button class="btn btn-primary rounded-end-3" type="button">Search</button>
+    <input @focusin="isFocused = true" @focusout="isFocused = false" type="text" class="form-control focus-ring border-0 ps-0 me-1" placeholder="Procurar por nome..." aria-label="SearchBar" aria-describedby="SearchBar">
+    <button class="btn btn-primary rounded-end-3 text-capitalize" type="button">procurar</button>
 </div>
 </template>
 
 <style scoped lang="scss">
-.form-control{
-    width: 220px;
-}
 [data-bs-theme='light']{
     .icon-color{
         stroke: var(--bs-gray-700);

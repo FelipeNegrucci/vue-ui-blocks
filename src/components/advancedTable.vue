@@ -3,109 +3,64 @@ import searchBar from '@/components/searchBar.vue'
 import iconPlus from './icons/iconPlus.vue'
 
 const props = defineProps({
-    list:{
+    title:{
+        type: String,
         required: true,
+        default: "table title"
+    },
+    list:{
         type: Array,
+        required: true,
         default(){
             return [
                 {
-                    nomeCompleto: "João Silva",
-                    telefone: "123456789",
-                    idade: 30,
-                    peso: 75,
-                    rotinaDeTreino: "Musculação e corrida",
-                    objetivo: "Perder peso e ganhar massa muscular",
-                    restricao: "Nenhuma",
+                    nomeCompleto: "Maximiliano Alejandro Rodrigues da Silva",
+                    telefone: "(12) 12345-6789",
                     dataDeCriacao: new Date(2024, 2, 28, 10, 30)
                 },
                 {
-                  nomeCompleto: "Maria Santos",
-                  telefone: "987654321",
-                  idade: 25,
-                  peso: 60,
-                  rotinaDeTreino: "Yoga e Pilates",
-                  objetivo: "Melhorar flexibilidade e reduzir estresse",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Isadora Beatriz Oliveira Santos",
+                  telefone: "(12) 98765-4321",
                   dataDeCriacao: new Date(2024, 2, 25, 14, 45)
                 },
                 {
-                  nomeCompleto: "Carlos Oliveira",
-                  telefone: "555123456",
-                  idade: 40,
-                  peso: 85,
-                  rotinaDeTreino: "CrossFit",
-                  objetivo: "Aumentar força e resistência",
-                  restricao: "Lesão no joelho",
+                  nomeCompleto: "Frederico Augusto Pereira de Souza",
+                  telefone: "(12) 55512-3456",
                   dataDeCriacao: new Date(2024, 2, 20, 8, 0)
                 },
                 {
-                  nomeCompleto: "Ana Costa",
-                  telefone: "999888777",
-                  idade: 35,
-                  peso: 70,
-                  rotinaDeTreino: "Natação e corrida",
-                  objetivo: "Manter saúde cardiovascular",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Valentina Carolina Fernandes Almeida",
+                  telefone: "(12) 99988-8777",
                   dataDeCriacao: new Date(2024, 2, 15, 11, 15)
                 },
                 {
-                  nomeCompleto: "Pedro Souza",
-                  telefone: "333444555",
-                  idade: 28,
-                  peso: 80,
-                  rotinaDeTreino: "Levantamento de peso",
-                  objetivo: "Ganhar massa muscular",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Leonardo Henrique Ribeiro Costa",
+                  telefone: "(12) 33344-4555",
                   dataDeCriacao: new Date(2024, 2, 10, 9, 30)
                 },
                 {
-                  nomeCompleto: "Juliana Lima",
-                  telefone: "666777888",
-                  idade: 32,
-                  peso: 65,
-                  rotinaDeTreino: "Funcional",
-                  objetivo: "Melhorar condicionamento físico",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Gabriela Cristina Cardoso Pereira",
+                  telefone: "(12) 66677-7888",
                   dataDeCriacao: new Date(2024, 2, 5, 16, 0)
                 },
                 {
-                  nomeCompleto: "Marcos Ferreira",
-                  telefone: "222333444",
-                  idade: 45,
-                  peso: 90,
-                  rotinaDeTreino: "Caminhada e corrida",
-                  objetivo: "Perder peso e aumentar resistência",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Cristiano Eduardo Martins Lima",
+                  telefone: "(12) 22233-3444",
                   dataDeCriacao: new Date(2024, 1, 28, 13, 45)
                 },
                 {
-                  nomeCompleto: "Carolina Pereira",
-                  telefone: "111222333",
-                  idade: 27,
-                  peso: 55,
-                  rotinaDeTreino: "Pilates",
-                  objetivo: "Fortalecer músculos centrais",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Camila Beatriz Rodrigues Costa e Silva",
+                  telefone: "(12) 99147-5849",
                   dataDeCriacao: new Date(2024, 1, 23, 10, 30)
                 },
                 {
-                  nomeCompleto: "Rafaela Gomes",
-                  telefone: "444555666",
-                  idade: 31,
-                  peso: 70,
-                  rotinaDeTreino: "Spinning e HIIT",
-                  objetivo: "Queimar gordura e melhorar resistência cardiovascular",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Rafaela Eduarda Ferreira da Cunha",
+                  telefone: "(12) 44455-5666",
                   dataDeCriacao: new Date(2024, 1, 18, 8, 0)
                 },
                 {
-                  nomeCompleto: "Fernando Moraes",
-                  telefone: "777888999",
-                  idade: 33,
-                  peso: 75,
-                  rotinaDeTreino: "Boxe e Muay Thai",
-                  objetivo: "Aumentar força e aprender defesa pessoal",
-                  restricao: "Nenhuma",
+                  nomeCompleto: "Gustavo Henrique Oliveira e Sousa Rodrigues",
+                  telefone: "(12) 77788-8999",
                   dataDeCriacao: new Date(2024, 1, 13, 14, 15)
                 }
             ]
@@ -121,15 +76,15 @@ function actions(index){
 <template>
     <div class="element-color vstack mx-0 py-3 rounded-2 gap-3 shadow border">
 
-        <div class="d-flex justify-content-between px-3">
-            <div class="fw-bold h5 my-auto text-capitalize">lista de alunos</div>
+        <div class="d-flex justify-content-between px-3 gap-3 text-capitalize">
+            <div class="fw-bold h5 my-auto text-nowrap">{{ props.title }}</div>
             <div class="hstack gap-3">
                 <div>
                     <searchBar/>
                 </div>
                 <div class="btn btn-primary d-flex px-3 gap-1">
                     <iconPlus class="my-auto" width="20" height="20" stroke="var(--bs-light)"/>
-                    <div class="my-auto">novo aluno</div>
+                    <span class="my-auto text-nowrap">novo</span>
                 </div>
             </div>
         </div>
@@ -140,30 +95,20 @@ function actions(index){
                     <tr class="text-capitalize">
                         <th class="ps-3 text-start">nome</th>
                         <th>telefone</th>
-                        <th>idade</th>
-                        <th>peso</th>
-                        <th>rotina de treino</th>
-                        <th>objetivo</th>
-                        <th>restricao</th>
-                        <th class="pe-3 text-end">data de criacao</th>
+                        <th class="pe-3 text-end" >data de criacao</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(row, index) in props.list" :key="index" @click="actions(i)">
-                        <td class="ps-3 text-start">{{ row.nomeCompleto }}</td>
+                        <td class="s-3 text-start text-nowrap overflow-x-hidden" style="min-width: 320px; max-width: 320px;">{{ row.nomeCompleto }}</td>
                         <td>{{ row.telefone }}</td>
-                        <td>{{ row.idade }}</td>
-                        <td>{{ row.peso }}</td>
-                        <td>{{ row.rotinaDeTreino }}</td>
-                        <td>{{ row.objetivo }}</td>
-                        <td>{{ row.restricao }}</td>
                         <td class="pe-3 text-end">{{ row.dataDeCriacao.toLocaleString('pt-BR') }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="table-footer d-flex justify-content-between px-3">
+        <div class="table-footer d-flex justify-content-between px-3 mb-auto">
             <span class="my-auto">
                 <span class="text-footer">Mostrando </span>
                 <span class="fw-bold text-footer-focuses">11-20</span>
@@ -179,6 +124,11 @@ function actions(index){
 </template>
 
 <style scoped lang="scss">
+.element-color{
+    min-width: 640px;
+    min-height: 600px;
+    max-height: 600px;
+}
 tbody tr{
     cursor: pointer;
 }

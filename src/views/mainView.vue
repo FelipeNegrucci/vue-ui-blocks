@@ -41,24 +41,5 @@ onMounted(()=>{
 </template>
 
 <style lang="scss">
-[data-bs-theme='dark'] *{
-    --bs-primary: hsl(350, 74%, 28%);
-    --bs-primary-rgb: 124, 19, 36;
-    .btn-primary{
-        --bs-btn-color: var(--bs-light);
-        --bs-btn-bg: hsl(350, 74%, 28%);
-        --bs-btn-border-color: hsl(350, 74%, 28%);
-        --bs-btn-hover-color: var(--bs-light);
-        --bs-btn-hover-bg: hsl(350, 75%, 20%);
-        --bs-btn-hover-border-color: hsl(350, 74%, 18%);
-        --bs-btn-focus-shadow-rgb: 218, 65, 90;
-        --bs-btn-active-color: var(--bs-light);
-        --bs-btn-active-bg: hsl(350, 74%, 18%);
-        --bs-btn-active-border-color: hsl(350, 75%, 16%);
-        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-        --bs-btn-disabled-color: var(--bs-light);
-        --bs-btn-disabled-bg: hsl(350, 74%, 28%);
-        --bs-btn-disabled-border-color: hsl(350, 74%, 28%);
-    }
-}
+
 </style>

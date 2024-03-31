@@ -1,21 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 import statsCardComp from '@/components/statsCardComp.vue';
 import advancedTable from '@/components/advancedTable.vue'
+import stackedList from '@/components/stackedList.vue';
 import iconUser from '@/components/icons/iconUser.vue';
 import iconFolder from '@/components/icons/iconFolder.vue';
 import iconPrinter from '@/components/icons/iconPrinter.vue';
-import { ref } from 'vue';
 
 var advancedTableList = ref(
     [
         {
             nomeCompleto: 'João Silva',
             telefone: '123456789',
-            idade: 30,
-            peso: 75,
-            rotinaDeTreino: 'Musculação e corrida',
-            objetivo: 'Perder peso e ganhar massa muscular',
-            restricao: 'Nenhuma',
             dataDeCriacao: new Date(2024, 2, 28, 10, 30)
         }
     ]
@@ -50,8 +46,11 @@ var advancedTableList = ref(
             </div>
 
             <div class="row gap-3">
+                <div class="col px-0 bg-light-subtle">
+                    <stackedList :title="'instrutores cadastrados'"/>
+                </div>
                 <div class="col px-0">
-                    <advancedTable/>
+                    <advancedTable :title="'lista de alunos'"/>
                 </div>
             </div>
 
@@ -67,7 +66,7 @@ var advancedTableList = ref(
 }
 [data-bs-theme='light']{
     .container-fluid{
-        background-color: var(--bs-gray-200);
+        background-color: var(--bs-gray-100);
     }
 }
 [data-bs-theme='dark']{
