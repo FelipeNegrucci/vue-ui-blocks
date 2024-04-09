@@ -35,10 +35,10 @@ const props = defineProps({
 [data-bs-theme='light'], [data-bs-theme='dark']{
     .nav-link{
         .icon-color{
-            fill: rgba(var(--bs-light-rgb), 0.7);
+            fill: rgba(var(--bs-light-rgb), 0.8);
         }
         span{
-            color: rgba(var(--bs-light-rgb), 0.7);
+            color: rgba(var(--bs-light-rgb), 0.8);
         }
         &:hover{
             .icon-color{

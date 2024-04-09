@@ -94,7 +94,7 @@ header{
         color: var(--bs-light);
         background-color: var(--bs-primary);
         button:hover{
-            background-color: rgba(var(--bs-light-rgb), 0.27);
+            background-color: rgba(var(--bs-light-rgb), 0.23);
         }
     }
     .icon-color{

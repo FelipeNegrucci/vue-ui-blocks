@@ -53,19 +53,19 @@ const props = defineProps({
 }
 [data-bs-theme='light'], [data-bs-theme='dark']{
     footer{
-        color: var(--bs-light);
-        background-color: var(--bs-primary);
+        color: var(--bs-dark);
+        background-color: var(--bs-gray-400);
         .text-color{
-            color: rgba(var(--bs-light-rgb), 0.7);
+            color: rgba(var(--bs-dark-rgb), 0.6);
         }
         .icon-area{
             .icon-color{
-                fill: rgba(var(--bs-light-rgb), 0.7);
+                fill: rgba(var(--bs-dark-rgb), 0.6);
             }
             &:hover{
-                background-color: rgba(var(--bs-light-rgb), 0.17);
+                background-color: rgba(var(--bs-dark-rgb), 0.17);
                 .icon-color{
-                    fill: var(--bs-light);
+                    fill: var(--bs-dark);
                 }
             }
         }

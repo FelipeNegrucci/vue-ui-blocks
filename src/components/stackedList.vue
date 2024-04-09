@@ -1,7 +1,14 @@
 <script setup>
-import iconPlus from './icons/iconPlus.vue'
+import iconPlus from './icons/iconPlus.vue';
 import iconUser from './icons/iconUser.vue';
-import iconCloseCircle from './icons/iconCloseCircle.vue';
+import iconClose from './icons/iconClose.vue';
+
+const iconColors = [
+    '#27A599',
+    '#E08300',
+    '#4B70E7',
+    '#932FB1'
+]
 
 const props = defineProps({
     title:{
@@ -16,7 +23,7 @@ const props = defineProps({
             return [
                 {
                   name: "Gabriela Rodrigues Almeida",
-                  position: "Personal Trainer Sênior"
+                  position: "Personal Trainer Sênior",
                 },
                 {
                   name: "Leonardo Pereira Martins",
@@ -55,15 +62,17 @@ const props = defineProps({
             <div v-for="(row, index) in props.list" :key="index" class="item-list d-flex justify-content-between rounded-2 p-2">
                 <div class="d-flex">
 
-                    <div class="icon-area my-auto me-3 rounded-circle d-flex">
-                        <iconUser class="icon-color m-auto"/>
+                    <div class="icon-area p-1 my-auto me-3 rounded-circle d-flex">
+                        <iconUser class="m-auto opacity-75" :fill="iconColors[Math.floor(Math.random() * iconColors.length)]"/>
                     </div>
                     <div class="my-auto">
                         <div class="text-name">{{ row.name }}</div>
                         <div class="text-position">{{ row.position }}</div>
                     </div>
                 </div>
-                <button class="d-flex btn-close border-dark border rounded-circle p-2 my-auto"></button>
+                <button class="d-flex rounded-circle p-1 my-auto">
+                    <iconClose width="22" height="22"/>
+                </button>
             </div>
         </div>
     </div>
@@ -71,7 +80,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .element-color{
-    // min-width: 640px;
+    min-width: 640px;
     min-height: 600px;
     max-height: 600px;
 }
@@ -83,15 +92,31 @@ const props = defineProps({
     width: 42px;
     height: 42px;
 }
+.item-list{
+    transition: background-color 0.15s ease-in-out;
+    button{
+        transition: opacity 0.15s ease-in-out;
+        opacity: 0;
+        border: 1px solid black;
+    }
+    &:hover button{
+        opacity: .5;
+    }
+}
 [data-bs-theme='light']{
-    .item-list:hover{
-        background-color: var(--bs-gray-200);
+    .element-color{
+        background-color: var(--bs-gray-100);
+    }
+    .item-list{
+        &:hover{
+            background-color: var(--bs-gray-200);
+        }
     }
     .icon-area{
-        background-color: var(--bs-gray-400);
+        background-color: var(--bs-gray-300);
     }
     .icon-color{
-        fill: var(--bs-gray-600);
+        fill: var(--bs-blue);
     }
     .text-name{
         color: var(--bs-gray-800);

@@ -6,22 +6,18 @@ const props = defineProps({
         default(){
             return [
                 'data-title',
-                '0.000',
-                ['000','data-news']
+                '0.000'
             ]
         }
     }
 })
 </script>
 
-
-
 <template>
     <div class="stat-card p-3 rounded-2 shadow border d-flex justify-content-between">
         <div class="col-auto vstack gap-2">
             <span class="text-title text-capitalize">{{ props.data[0] }}</span>
             <span class="text-stat fs-5 fw-bold">{{ props.data[1] }}</span>
-            <span class="text-news"><span class="text-success fw-bold">{{ props.data[2][0] }}</span> {{ props.data[2][1] }}</span>
         </div>
         <div class="col-auto">
             <div class="icon-area rounded-2 d-flex align-items-center justify-content-center">
@@ -46,7 +42,7 @@ const props = defineProps({
     .icon-area{
         background-color: rgba(var(--bs-dark-rgb), .085);
     }
-    .text-title, .text-news{
+    .text-title{
         color: var(--bs-gray-600);
     }
     .text-stat{
