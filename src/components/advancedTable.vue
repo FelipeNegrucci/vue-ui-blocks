@@ -74,7 +74,7 @@ function actions(index){
 </script>
 
 <template>
-    <div class="element-color vstack mx-0 py-3 rounded-2 gap-3 shadow border">
+    <div class="element-color vstack mx-0 py-3 rounded-2 gap-3 border">
 
         <div class="d-flex justify-content-between px-3 gap-3 text-capitalize">
             <div class="fw-bold h5 my-auto text-nowrap">{{ props.title }}</div>

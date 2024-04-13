@@ -51,7 +51,7 @@ const props = defineProps({
     width: 20px;
     height: 20px;
 }
-[data-bs-theme='light'], [data-bs-theme='dark']{
+[data-bs-theme='light']{
     footer{
         color: var(--bs-dark);
         background-color: var(--bs-gray-400);
@@ -66,6 +66,26 @@ const props = defineProps({
                 background-color: rgba(var(--bs-dark-rgb), 0.17);
                 .icon-color{
                     fill: var(--bs-dark);
+                }
+            }
+        }
+    }
+}
+[data-bs-theme='dark']{
+    footer{
+        color: var(--bs-light);
+        background-color: var(--bs-gray-600);
+        .text-color{
+            color: rgba(var(--bs-light-rgb), 0.6);
+        }
+        .icon-area{
+            .icon-color{
+                fill: rgba(var(--bs-light-rgb), 0.6);
+            }
+            &:hover{
+                background-color: rgba(var(--bs-light-rgb), 0.17);
+                .icon-color{
+                    fill: var(--bs-light);
                 }
             }
         }

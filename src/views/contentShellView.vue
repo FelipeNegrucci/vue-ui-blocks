@@ -36,10 +36,14 @@ import iconPrinter from '@/components/icons/iconPrinter.vue';
 
             <div class="row gap-3">
                 <div class="col px-0">
-                    <stackedList :title="'instrutores cadastrados'"/>
+                    <div class="container-fluid px-0 overflow-x-auto">
+                        <stackedList :title="'instrutores cadastrados'"/>
+                    </div>
                 </div>
                 <div class="col px-0">
-                    <advancedTable :title="'lista de alunos'"/>
+                    <div class="container-fluid px-0 overflow-x-auto">
+                        <advancedTable :title="'lista de alunos'"/>
+                    </div>
                 </div>
             </div>
 
