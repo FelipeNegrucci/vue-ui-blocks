@@ -6,11 +6,15 @@ import iconDotsHorizontal from './icons/iconDotsHorizontal.vue';
 const iconColors = [
     '#27A599',
     '#E08300',
-    '#4B70E7',
-    '#932FB1'
+    '#5089f2',
+    '#a93ec9'
 ]
 
 const props = defineProps({
+    displayWidth:{
+        required: true,
+        type: Number
+    },
     title:{
         type: String,
         required: true,
@@ -24,22 +28,6 @@ const props = defineProps({
                 {
                   name: "Gabriela Rodrigues Almeida",
                   position: "Personal Trainer Sênior",
-                },
-                {
-                  name: "Leonardo Pereira Martins",
-                  position: "Instrutor de Musculação e Condicionamento Físico"
-                },
-                {
-                  name: "Juliana Oliveira da Silva",
-                  position: "Especialista em Aulas de Pilates e Alongamento"
-                },
-                {
-                  name: "Gustavo Santos Pereira",
-                  position: "Treinador de CrossFit e Funcional"
-                },
-                {
-                  name: "Isabela Ferreira Lima",
-                  position: "Coordenadora de Atividades Aeróbicas e Dança"
                 }
             ]
         }
@@ -48,7 +36,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="element-color vstack mx-0 py-3 rounded-2 gap-3 border">
+    <div class="element-color vstack mx-0 py-3 rounded-2 gap-3 border" :style="displayWidth > 1339 ? 'min-height: 600px' : 'min-height: auto'">
 
         <div class="d-flex justify-content-between px-3 gap-3 text-capitalize">
             <div class="fw-bold h5 my-auto text-nowrap">{{ props.title }}</div>
@@ -58,7 +46,7 @@ const props = defineProps({
             </div>
         </div>
 
-        <div class="vstack gap-2 mx-3">
+        <div class="vstack gap-2 mx-3 mb-2">
             <div v-for="(row, index) in props.list" :key="index" class="item-list d-flex justify-content-between rounded-2 px-3 py-2">
                 <div class="d-flex">
 
@@ -81,7 +69,6 @@ const props = defineProps({
 <style scoped lang="scss">
 .element-color{
     min-width: 640px;
-    min-height: 600px;
     max-height: 600px;
 }
 .icon-area{

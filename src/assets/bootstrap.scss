@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,600&family=Roboto+Slab&family=Titillium+Web:wght@900&display=swap');
+
 
 $enable-caret: false;
 
@@ -23,4 +25,4 @@ $font-family-sans-serif:
 $headings-font-family: 'Libre Franklin', sans-serif;
 $display-font-family: 'Titillium Web', sans-serif;
 
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "/node_modules/bootstrap/scss/bootstrap.scss";

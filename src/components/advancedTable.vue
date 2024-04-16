@@ -17,51 +17,6 @@ const props = defineProps({
                     nomeCompleto: "Maximiliano Alejandro Rodrigues da Silva",
                     telefone: "(12) 12345-6789",
                     dataDeCriacao: new Date(2024, 2, 28, 10, 30)
-                },
-                {
-                  nomeCompleto: "Isadora Beatriz Oliveira Santos",
-                  telefone: "(12) 98765-4321",
-                  dataDeCriacao: new Date(2024, 2, 25, 14, 45)
-                },
-                {
-                  nomeCompleto: "Frederico Augusto Pereira de Souza",
-                  telefone: "(12) 55512-3456",
-                  dataDeCriacao: new Date(2024, 2, 20, 8, 0)
-                },
-                {
-                  nomeCompleto: "Valentina Carolina Fernandes Almeida",
-                  telefone: "(12) 99988-8777",
-                  dataDeCriacao: new Date(2024, 2, 15, 11, 15)
-                },
-                {
-                  nomeCompleto: "Leonardo Henrique Ribeiro Costa",
-                  telefone: "(12) 33344-4555",
-                  dataDeCriacao: new Date(2024, 2, 10, 9, 30)
-                },
-                {
-                  nomeCompleto: "Gabriela Cristina Cardoso Pereira",
-                  telefone: "(12) 66677-7888",
-                  dataDeCriacao: new Date(2024, 2, 5, 16, 0)
-                },
-                {
-                  nomeCompleto: "Cristiano Eduardo Martins Lima",
-                  telefone: "(12) 22233-3444",
-                  dataDeCriacao: new Date(2024, 1, 28, 13, 45)
-                },
-                {
-                  nomeCompleto: "Camila Beatriz Rodrigues Costa e Silva",
-                  telefone: "(12) 99147-5849",
-                  dataDeCriacao: new Date(2024, 1, 23, 10, 30)
-                },
-                {
-                  nomeCompleto: "Rafaela Eduarda Ferreira da Cunha",
-                  telefone: "(12) 44455-5666",
-                  dataDeCriacao: new Date(2024, 1, 18, 8, 0)
-                },
-                {
-                  nomeCompleto: "Gustavo Henrique Oliveira e Sousa Rodrigues",
-                  telefone: "(12) 77788-8999",
-                  dataDeCriacao: new Date(2024, 1, 13, 14, 15)
                 }
             ]
         }

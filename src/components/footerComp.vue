@@ -7,7 +7,7 @@ const props = defineProps({
     display:{
         width:{
             required: true,
-            type: Object
+            type: Number
         },
         isLandscapeOrientation:{
             required: true,
@@ -27,13 +27,13 @@ const props = defineProps({
             <div class="row" :class="props.display.width < 625 ? 'justify-content-center' : 'justify-content-between'">
                 <div class="col-auto text-color px-0 text-center" :class="props.display.width < 625 ? 'mb-2' : 'my-auto'">© 2024-2025 Felipe Negrucci. Todos os direitos reservados.</div>
                 <div class="col-auto px-0 hstack gap-1 my-auto">
-                    <RouterLink to="/" class="icon-area rounded-2 d-flex">
+                    <RouterLink to="/" class="icon-area rounded-2 d-flex" data-bs-custom-class="custom-popover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Visualizar Dados">
                         <iconChart class="icon-color m-auto"/>
                     </RouterLink>
-                    <RouterLink to="/" class="icon-area rounded-2 d-flex">
+                    <RouterLink to="/" class="icon-area rounded-2 d-flex" data-bs-custom-class="custom-popover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Fila de Impressão">
                         <iconPrinter class="icon-color m-auto"/>
                     </RouterLink>
-                    <RouterLink to="/" class="icon-area rounded-2 d-flex">
+                    <RouterLink to="/" class="icon-area rounded-2 d-flex" data-bs-custom-class="custom-popover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Configurações">
                         <iconSettings class="icon-color m-auto"/>
                     </RouterLink>
                 </div>

@@ -10,7 +10,7 @@ const props = defineProps({
     display:{
         width:{
             required: true,
-            type: Object
+            type: Number
         },
         isLandscapeOrientation:{
             required: true,
@@ -51,7 +51,7 @@ function toggleColorMode(){
                     </div>
                 </div>
                 <div class="col-auto px-0 my-auto d-flex gap-2">
-                    <button @click="toggleColorMode()" type="button" class="btn p-0 border-0">
+                    <button @click="toggleColorMode()" type="button" class="btn p-0 border-0" data-bs-custom-class="custom-popover" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" data-bs-content="Mudar Tema">
                         <iconMoon v-if="colorMode == 'light'" class="icon-color" width="24" height="24"/>
                         <iconSun v-if="colorMode == 'dark'" class="icon-color" width="24" height="24"/>
                     </button>
