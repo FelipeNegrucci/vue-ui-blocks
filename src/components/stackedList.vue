@@ -41,10 +41,54 @@ const props = defineProps({
 
         <div class="d-flex justify-content-between px-3 gap-3 text-capitalize">
             <div class="fw-bold h5 my-auto text-nowrap">{{ props.title }}</div>
-            <div class="btn btn-primary d-flex px-3 gap-1">
+
+            <div class="btn btn-primary d-flex px-3 gap-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <iconPlus class="my-auto" width="20" height="20" stroke="var(--bs-light)"/>
                 <span class="my-auto text-nowrap">novo</span>
             </div>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" style="background-color: transparent;">
+                    <div class="modal-content">
+                        <div class="modal-body vstack gap-3 p-4">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-capitalize h5 my-auto">novo instrutor</span>
+                                <button type="button" class="btn-close p-2" data-bs-dismiss="modal" aria-label="Close" style="scale: 0.8;"></button>
+                            </div>
+                            <hr class="border border-1 opacity-50 my-0">
+                            <form class="vstack gap-3">
+                                <div class="col">
+                                    <label for="inputName" class="form-label">Nome Completo</label>
+                                    <input type="text" class="form-control px-3 py-2" id="inputName" placeholder="Nome do Instrutor">
+                                </div>
+                                <div class="col">
+                                    <label for="inputPosition" class="form-label">Cargo</label>
+                                    <input type="text" class="form-control px-3 py-2" id="inputPosition" placeholder="Cargo Ocupado">
+                                </div>
+                                <div class="col">
+                                    <div class="mb-2">Cor Da Etiqueta</div>
+                                    <div class="tag-colors hstack gap-2">
+                                        <div v-for="(color, index) in iconColors" :key="index">
+                                            <input type="radio" class="btn-check" name="options" :id="'option' + index" autocomplete="off">
+                                            <label class="btn" :for="'option' + index" :style="{ 'background-color':color }"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex gap-3">
+                                    <div class="btn btn-primary d-flex gap-1 col justify-content-center" type="submit">
+                                        <iconPlus class="my-auto" width="20" height="20" stroke="var(--bs-light)"/>
+                                        <span class="my-auto text-nowrap">novo instrutor</span>
+                                    </div>
+                                    <div class="btn btn-outline-secondary d-flex gap-1 col justify-content-center">
+                                        <span class="my-auto text-nowrap">descartar</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="vstack gap-2 mx-3 mb-2">
@@ -71,6 +115,10 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+.tag-colors label{
+    width: 32px;
+    height: 32px;
+}
 .element-color{
     min-width: 640px;
     max-height: 600px;

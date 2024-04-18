@@ -49,11 +49,21 @@ const props = defineProps({
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(row, index) in props.list" :key="index">
+                    <tr v-for="(row, index) in props.list" :key="index" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <td class="s-3 text-start text-nowrap overflow-x-hidden" style="min-width: 320px; max-width: 320px;">{{ row.nomeCompleto }}</td>
                         <td>{{ row.telefone }}</td>
                         <td class="pe-3 text-end">{{ row.dataDeCriacao.toLocaleString('pt-BR') }}</td>
                     </tr>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" style="background-color: transparent;">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </tbody>
             </table>
         </div>
