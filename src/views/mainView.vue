@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onBeforeMount, onMounted, provide } from 'vue';
-import headerComp from '@/components/headerComp.vue';
-import footerComp from '@/components/footerComp.vue';
+import headerComp from '@/components/header.vue';
+import footerComp from '@/components/footer.vue';
 
 var display = ref({
     width: undefined,

@@ -1,7 +1,7 @@
 <script setup>
-import statsCardComp from '@/components/statsCardComp.vue';
-import advancedTable from '@/components/advancedTable.vue'
-import stackedList from '@/components/stackedList.vue';
+import statsCardComp from '@/components/statsCard.vue';
+import advancedTableComp from '@/components/advancedTable.vue'
+import stackedListComp from '@/components/stackedList.vue';
 import iconUser from '@/components/icons/iconUser.vue';
 import iconFolder from '@/components/icons/iconFolder.vue';
 import iconPrinter from '@/components/icons/iconPrinter.vue';
@@ -54,7 +54,7 @@ const props = defineProps({
             <div class="row gap-3">
                 <div class="col px-0">
                     <div class="container-fluid px-0 overflow-x-auto">
-                        <stackedList
+                        <stackedListComp
                             :displayWidth="props.display.width"
                             :title="'instrutores cadastrados'"
                             :list="[
@@ -84,7 +84,7 @@ const props = defineProps({
                 </div>
                 <div class="col px-0">
                     <div class="container-fluid px-0 overflow-x-auto">
-                        <advancedTable
+                        <advancedTableComp
                             :title="'lista de alunos'"
                             :list="[
                                 {

@@ -1,7 +1,6 @@
 <script setup>
 import searchBar from '@/components/searchBar.vue'
 import iconPlus from './icons/iconPlus.vue'
-
 const props = defineProps({
     title:{
         type: String,
@@ -22,10 +21,6 @@ const props = defineProps({
         }
     }
 })
-
-function actions(index){
-    console.log(index)
-}
 </script>
 
 <template>
@@ -54,7 +49,7 @@ function actions(index){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(row, index) in props.list" :key="index" @click="actions(i)">
+                    <tr v-for="(row, index) in props.list" :key="index">
                         <td class="s-3 text-start text-nowrap overflow-x-hidden" style="min-width: 320px; max-width: 320px;">{{ row.nomeCompleto }}</td>
                         <td>{{ row.telefone }}</td>
                         <td class="pe-3 text-end">{{ row.dataDeCriacao.toLocaleString('pt-BR') }}</td>

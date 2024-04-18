@@ -1,4 +1,5 @@
 <script setup>
+import dropdownComp from './dropdown.vue';
 import iconPlus from './icons/iconPlus.vue';
 import iconUser from './icons/iconUser.vue';
 import iconDotsHorizontal from './icons/iconDotsHorizontal.vue';
@@ -58,9 +59,12 @@ const props = defineProps({
                         <div class="text-position">{{ row.position }}</div>
                     </div>
                 </div>
-                <button class="d-flex border-0 p-0 my-auto bg-transparent">
-                    <iconDotsHorizontal class="dots-color" width="34" height="34"/>
-                </button>
+                <div class="dropdown my-auto">
+                    <button class="dropdown-toggle border-0 p-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <iconDotsHorizontal class="dropdown-dots" width="34" height="34"/>
+                    </button>
+                    <dropdownComp/>
+                </div>
             </div>
         </div>
     </div>
@@ -96,7 +100,7 @@ const props = defineProps({
             .icon-area{
                 background-color: var(--bs-gray-300);
             }
-            .dots-color{
+            .dropdown-dots{
                 stroke: var(--bs-gray-800);
             }
         }
@@ -121,7 +125,7 @@ const props = defineProps({
             .icon-area{
                 background-color: var(--bs-gray-800);
             }
-            .dots-color{
+            .dropdown-dots{
                 stroke: var(--bs-gray-200);
             }
         }

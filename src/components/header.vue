@@ -1,6 +1,6 @@
 <script setup>
 import { inject } from 'vue';
-import navigationComp from '@/components/navigationComp.vue';
+import navigationComp from '@/components/navigation.vue';
 import iconDumbbell from './icons/iconDumbbell.vue';
 import iconMoon from './icons/iconMoon.vue';
 import iconSun from './icons/iconSun.vue';
